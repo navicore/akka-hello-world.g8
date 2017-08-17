@@ -4,19 +4,20 @@ A [g8] Template for AKKA HTTP
 ## PREREEQ
 
   * sbt >= 13.13
-  * install giter8
-    * via [g8 setup]
-    * or just `brew install giter8`
 
 ## USAGE
 
-interactively prompt for details like your project name and package name
+Interactively prompt for details like your project name and package name:
 
 ```console
 sbt new navicore/akka-hello-world.g8 
 ```
 
-or oneshot via cli
+Or oneshot via cli:
+
+  * install giter8
+    * via [g8 setup]
+    * or just `brew install giter8`
 
 ```console
 g8 git@github.com:navicore/akka-hello-world.g8.git --name=YOUR_PROJECT_NAME  --package=YOUR.PACKAGE.NAME
