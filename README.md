@@ -1,8 +1,6 @@
 A [g8] Template for AKKA HTTP
 ---
 
-First try at g8 templates, more soon...
-
 ## PREREEQ
 
   * sbt >= 13.13
