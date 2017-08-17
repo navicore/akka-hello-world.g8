@@ -23,7 +23,5 @@ Or oneshot via cli:
 g8 git@github.com:navicore/akka-hello-world.g8.git --name=YOUR_PROJECT_NAME  --package=YOUR.PACKAGE.NAME
 ```
 
-note, I have a problem with iterm2 and sbt interactive mode, the above works in osx terminal.  debugging...
-
 [g8]: http://www.foundweekends.org/giter8/
 [g8 setup]: http://www.foundweekends.org/giter8/setup.html 
