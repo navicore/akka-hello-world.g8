@@ -6,6 +6,9 @@ First try at g8 templates, more soon...
 ## PREREEQ
 
   * sbt >= 13.13
+  * install giter8
+    * via http://www.foundweekends.org/giter8/setup.html 
+    * or just `brew install giter8`
 
 ```console
 sbt new navicore/akka-hello-world.g8 
