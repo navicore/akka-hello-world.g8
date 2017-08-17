@@ -1,4 +1,4 @@
-A g8 Template for AKKA HTTP
+A [g8] Template for AKKA HTTP
 ---
 
 First try at g8 templates, more soon...
