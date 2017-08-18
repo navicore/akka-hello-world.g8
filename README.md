@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/navicore/akka-hello-world.g8.svg?branch=master)](https://travis-ci.org/navicore/akka-hello-world.g8)
+
 A [g8] Template for AKKA HTTP
 ---
 
