@@ -10,7 +10,7 @@
         <appender-ref ref="STDOUT"/>
     </root>
 
-    <logger name="$package$" level="\${LOG_LEVEL:-info}"/>
+    <logger name="$package$" level="\${LOG_LEVEL:-debug}"/>
 
 </configuration>
 

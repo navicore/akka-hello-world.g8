@@ -7,12 +7,11 @@ import akka.http.scaladsl.server.Directives._
 import akka.stream.ActorMaterializer
 import com.typesafe.config.ConfigFactory
 import com.typesafe.scalalogging.Logger
+import com.typesafe.scalalogging.LazyLogging
 
-object Main {
+object Main extends LazyLogging {
 
   def main(args: Array[String]) {
-
-    val logger = Logger(getClass)
 
     val conf = ConfigFactory.load()
     val urlpath = conf.getString("main.path")
@@ -24,11 +23,15 @@ object Main {
 
     val route =
       path(urlpath) {
-        get {
-          complete(HttpEntity(ContentTypes.`application/json`, "{\"msg\": \"Say hello to akka-http\"}\n"))
-        } ~
-        post {
-          complete(HttpEntity(ContentTypes.`application/json`, "{\"msg\": \"Say whoa to akka-http\"}\n"))
+        logRequest(urlpath) {
+          get {
+            logger.debug(s"get \$urlpath")
+            complete(HttpEntity(ContentTypes.`application/json`, "{\"msg\": \"Say hello to akka-http\"}\n"))
+          } ~
+          post {
+            logger.debug(s"post \$urlpath")
+            complete(HttpEntity(ContentTypes.`application/json`, "{\"msg\": \"Say whoa to akka-http\"}\n"))
+          }
         }
       }
 
