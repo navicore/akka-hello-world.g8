@@ -20,9 +20,10 @@ libraryDependencies ++=
     "ch.qos.logback" % "logback-classic" % "1.1.7",
     "com.typesafe" % "config" % "1.2.1",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0",
-    
+
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
     "com.typesafe.akka" %% "akka-stream" % akkaVersion,
+    "com.typesafe.akka" %% "akka-cluster" % akkaVersion,
     "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
 
     "org.json4s" %% "json4s-native" % "3.5.3",
