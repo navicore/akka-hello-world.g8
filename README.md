@@ -27,3 +27,12 @@ g8 git@github.com:navicore/akka-hello-world.g8.git --name=YOUR_PROJECT_NAME  --p
 
 [g8]: http://www.foundweekends.org/giter8/
 [g8 setup]: http://www.foundweekends.org/giter8/setup.html 
+
+## DEVELOPING
+
+while developing the template, test using something like:
+
+```console
+sbt new file:///Users/navicore/git/navicore/akka-hello-world.g8
+```
+ 
