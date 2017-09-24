@@ -9,6 +9,7 @@ import akka.stream.ActorMaterializer
 import ch.megard.akka.http.cors.scaladsl.CorsDirectives._
 import com.typesafe.scalalogging.LazyLogging
 import $package$.models.{JsonSupport, Message}
+import $package$.routes.{$httpBasePath;format="Camel"$Route, $httpBasePath;format="Camel"$SegmentRoute}
 import spray.json._
 import scala.concurrent.ExecutionContextExecutor
 
@@ -22,45 +23,8 @@ object Main extends LazyLogging with JsonSupport with ErrorSupport {
 
     val route =
       HealthCheck ~
-        path(urlpath / Segment) { name =>
-          logRequest(s"\$urlpath / \$name") {
-            handleErrors {
-              cors(corsSettings) {
-                get {
-                  val response =
-                    Message(java.util.UUID.randomUUID(),
-                            new Date(),
-                            s"hiya \$name")
-                  complete(response.toJson.prettyPrint)
-                } ~
-                  post {
-                    decodeRequest {
-                      entity(as[Message]) { m =>
-                        val response = Message(java.util.UUID.randomUUID(),
-                                               new Date(),
-                                               s"\${m.body} to you, too!")
-                        complete(response.toJson.prettyPrint)
-                      }
-                    }
-                  }
-              }
-            }
-          }
-        } ~
-        path(urlpath) {
-          logRequest(urlpath) {
-            handleErrors {
-              cors(corsSettings) {
-                get {
-                  logger.debug(s"get \$urlpath")
-                  complete(
-                    HttpEntity(ContentTypes.`application/json`,
-                               "{\"msg\": \"Say hello to $name$\"}\n"))
-                }
-              }
-            }
-          }
-        }
+      $httpBasePath;format="Camel"$Route.apply ~
+      $httpBasePath;format="Camel"$SegmentRoute.apply
 
     Http().bindAndHandle(route, "0.0.0.0", port)
   }

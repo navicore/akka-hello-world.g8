@@ -2,7 +2,7 @@ http://localhost:8080
 -ks
 Content-Type: application/json; charset=utf-8
 
-POST /$httpBasePath$/you
+POST /$httpBasePath;format="camel,lower"$/you
 {
   "id": "b2546ee7-494f-42cc-abe0-9113c3eefee2",
   "datetime": "2017-09-24T18:13:01.570Z",
