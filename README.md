@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/75e5084c417c4ef39946e893fe2c9129)](https://www.codacy.com/app/navicore/akka-hello-world.g8?utm_source=github.com&utm_medium=referral&utm_content=navicore/akka-hello-world.g8&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/navicore/akka-hello-world.g8.svg?branch=master)](https://travis-ci.org/navicore/akka-hello-world.g8)
 
 A [g8] Template for AKKA HTTP
