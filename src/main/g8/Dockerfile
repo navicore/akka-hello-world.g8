@@ -1,4 +1,5 @@
 FROM java:8
+MAINTAINER Ed Sweeney <ed@onextent.com>
 
 EXPOSE 8080
 

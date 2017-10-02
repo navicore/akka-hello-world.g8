@@ -2,35 +2,25 @@ package $package$
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
-import akka.http.scaladsl.model._
 import akka.http.scaladsl.server.Directives._
 import akka.stream.ActorMaterializer
-import com.typesafe.config.ConfigFactory
-import com.typesafe.scalalogging.Logger
+import com.typesafe.scalalogging.LazyLogging
+import $package$.models.{JsonSupport, Message}
+import $package$.routes.{$httpBasePath;format="Camel"$Route, $httpBasePath;format="Camel"$SegmentRoute}
+import scala.concurrent.ExecutionContextExecutor
 
-object Main {
+object Main extends LazyLogging with JsonSupport with ErrorSupport {
 
   def main(args: Array[String]) {
 
-    val logger = Logger(getClass)
-
-    val conf = ConfigFactory.load()
-    val urlpath = conf.getString("main.path")
-    val port = conf.getInt("main.port")
-
-    implicit val system = ActorSystem("rest-system")
-    implicit val materializer = ActorMaterializer()
-    implicit val executionContext = system.dispatcher
+    implicit val system: ActorSystem = ActorSystem("$name;format="Camel"$-system")
+    implicit val materializer: ActorMaterializer = ActorMaterializer()
+    implicit val executionContext: ExecutionContextExecutor = system.dispatcher
 
     val route =
-      path(urlpath) {
-        get {
-          complete(HttpEntity(ContentTypes.`application/json`, "{\"msg\": \"Say hello to akka-http\"}\n"))
-        } ~
-        post {
-          complete(HttpEntity(ContentTypes.`application/json`, "{\"msg\": \"Say whoa to akka-http\"}\n"))
-        }
-      }
+      HealthCheck ~
+      $httpBasePath;format="Camel"$Route.apply ~
+      $httpBasePath;format="Camel"$SegmentRoute.apply
 
     Http().bindAndHandle(route, "0.0.0.0", port)
   }
