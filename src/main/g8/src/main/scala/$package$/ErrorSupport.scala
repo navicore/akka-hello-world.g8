@@ -23,8 +23,7 @@ trait ErrorSupport extends LazyLogging {
   val urlpath: String = conf.getString("main.path")
   val port: Int = conf.getInt("main.port")
 
-  val corsSettings: CorsSettings.Default = CorsSettings.defaultSettings.copy(
-    allowedOrigins = HttpOriginRange(corsOriginList: _*))
+  val corsSettings: CorsSettings = CorsSettings.defaultSettings.withAllowedOrigins(HttpOriginRange(corsOriginList: _*))
 
   val rejectionHandler
     : RejectionHandler = corsRejectionHandler withFallback RejectionHandler.default

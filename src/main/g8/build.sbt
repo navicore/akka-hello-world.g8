@@ -17,11 +17,11 @@ val akkaHttpVersion = "$akkaHttpVersion$"
 
 libraryDependencies ++=
   Seq(
-    "ch.megard" %% "akka-http-cors" % "0.2.1",
+    "ch.megard" %% "akka-http-cors" % "0.3.1",
 
-    "ch.qos.logback" % "logback-classic" % "1.1.7",
-    "com.typesafe" % "config" % "1.2.1",
-    "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0",
+    "ch.qos.logback" % "logback-classic" % "1.2.3",
+    "com.typesafe" % "config" % "1.3.3",
+    "com.typesafe.scala-logging" %% "scala-logging" % "3.9.0",
 
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
     "com.typesafe.akka" %% "akka-stream" % akkaVersion,
@@ -29,8 +29,8 @@ libraryDependencies ++=
     "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
     "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpVersion,
 
-    "org.json4s" %% "json4s-native" % "3.5.3",
-    "com.github.nscala-time" %% "nscala-time" % "2.16.0",
+    "org.json4s" %% "json4s-native" % "3.6.1",
+    "com.github.nscala-time" %% "nscala-time" % "2.20.0",
 
     "org.scalatest" %% "scalatest" % "3.0.5" % "test"
 
