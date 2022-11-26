@@ -19,7 +19,7 @@ libraryDependencies ++=
   Seq(
     "ch.megard" %% "akka-http-cors" % "0.4.3",
 
-    "ch.qos.logback" % "logback-classic" % "1.2.3",
+    "ch.qos.logback" % "logback-classic" % "1.4.5",
     "com.typesafe" % "config" % "1.3.4",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
 
